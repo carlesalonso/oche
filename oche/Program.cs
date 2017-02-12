@@ -7,9 +7,13 @@ namespace oche
 		public static void Main(string[] args)
 		{
 
+			// Per llegir els arguments de l'execució
+			// oche nom
+
 			if (args.Length == 0)
 			{
-				Console.WriteLine("Has de posar el teu nom");
+				Console.WriteLine("Has de posar el teu nom!!");
+				Console.WriteLine("Format: oche nom");
 
 
 			}
@@ -35,6 +39,7 @@ namespace oche
 					else
 					{
 						string sortida = invertirString(entrada);
+						//string sortida = invertirString2(entrada);
 						Console.WriteLine(sortida);
 						if (entrada.Equals(sortida))
 							Console.WriteLine("Bonica paraula!!");
@@ -48,12 +53,11 @@ namespace oche
 
 
 
+		//Mètode per invertir un string molt poc refinat
+		//però molt evident. Proposeu millores ;)
+
 		private static string invertirString(string value)
 		{
-			//Mètode per invertir un string molt poc refinat
-			//però molt evident. Proposeu millores ;)
-
-
 			string cadena = null;
 			int t = value.Length;
 			for (int i = t - 1; i >= 0; i--)
@@ -66,7 +70,14 @@ namespace oche
 
 
 
+		//Mètode usant el mètode Reverse associats a arrays
+		private static string invertirString2(string value)
 
+		{
+			char[] charArray = value.ToCharArray();
+			Array.Reverse(charArray);
+			return new string(charArray);
+		}
 
 	}
 }
